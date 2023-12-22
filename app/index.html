@@ -8,6 +8,8 @@
 </head>
 <body>
 <div class="top">
+  <a href="#content" class="sr-only" tabindex="0">Allez au contenu</a>
+  <a href="#main-nav" class="sr-only" tabindex="0">Allez au menu de navigation</a>
   <header>
     <div class="ui-width">
       <h1>
@@ -18,21 +20,21 @@
       </p>
     </div>
   </header>
-  <label title="Toggle menu" role="button" for="menu-toggler-checkbox" tabindex="1" id="menu-toggler-label">
+  <label title="Toggle menu" role="button" for="menu-toggler-checkbox" tabindex="0" id="menu-toggler-label">
     <span class="sr-only">Afficher ou masquer le menu</span>
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256" aria-hidden="true">
       <path fill="currentColor" d="M222 128a6 6 0 0 1-6 6H40a6 6 0 0 1 0-12h176a6 6 0 0 1 6 6M40 70h176a6 6 0 0 0 0-12H40a6 6 0 0 0 0 12m176 116H40a6 6 0 0 0 0 12h176a6 6 0 0 0 0-12"/>
     </svg>
   </label>
-  <input type="checkbox" id="menu-toggler-checkbox" aria-hidden="true" />
-  <nav aria-label="Main Navigation" class="main-nav">
+  <input type="checkbox" id="menu-toggler-checkbox" name="menu-toggler-checkbox" aria-hidden="true" aria-labelledby="menu-toggler-label" />
+  <nav aria-label="Main Navigation" class="main-nav" id="main-nav">
     <div class="ui-width">
       <ul>
         <li><a href="#">Item</a></li>
         <li class="dropdown" id="dropdown-1" role="combobox">
           <button type="button" class="dropdown__title" aria-expanded="false" aria-controls="sweets-dropdown"
       aria-haspopup="true">
-            I have a submenu
+            Item avec sous-menu
           </button>
           <ul class="dropdown__menu" id="sweets-dropdown">
             <li><a href="#">Item</a></li>
@@ -44,7 +46,7 @@
         <li class="dropdown" id="dropdown-2" role="combobox">
           <button type="button" class="dropdown__title" aria-expanded="false" aria-controls="sweets-dropdown"
       aria-haspopup="true">
-            I have a submenu
+        Item avec sous-menu
           </button>
           <ul class="dropdown__menu" id="sweets-dropdown">
             <li><a href="#">Item</a></li>
@@ -58,7 +60,7 @@
     </div>
   </nav>
   <main>
-    <div class="ui-width">
+    <div class="ui-width" id="content">
       <p>Loin, très loin, au delà des monts Mots, à mille lieues des pays Voyellie et Consonnia, demeurent les Bolos Bolos. Ils vivent en retrait, à Bourg-en-Lettres, sur les côtes de la Sémantique, un vaste océan de langues.</p>
       <p>Un petit ruisseau, du nom de Larousse, coule en leur lieu et les approvisionne en règlalades nécessaires en tout genre; un pays paradisiagmatique, dans lequel des pans entiers de phrases prémâchées vous volent litéralement tout cuit dans la bouche.</p>
       <p>Pas même la toute puissante Ponctuation ne régit les Bolos Bolos - une vie on ne peut moins orthodoxographique.</p>

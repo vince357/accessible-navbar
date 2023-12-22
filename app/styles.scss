@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
   padding: 0;
   margin: 0;
@@ -29,6 +32,17 @@ $breakpoint: 60rem;
 	position: absolute !important;
 	width: 1px !important;
 	white-space: nowrap !important;
+  &:focus {
+    border: revert !important;
+    clip: revert !important;
+    clip-path: revert !important;
+    height: revert !important;
+    overflow: revert !important;
+    padding: revert !important;
+    position: revert !important;
+    width: revert !important;
+    white-space: revert !important;
+  }
 }
 #menu-toggler-checkbox {
   display: none;
