@@ -1,72 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Accessible navigation bar POC</title>
+<title>Navigation accessible (POC)</title>
+<meta name="viewport" content="width=device-width" />
 <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
-<body tabindex="-1">
-<header>
-  <h1>
-    An accessible navigation bar with dropdown menus
-  </h1>
-  <p>
-    Use tab key to navigate
-  </p>
-</header>
-<label title="Toggle menu" role="button" for="menu-toggler-checkbox">
-  <span class="sr-only">Toggle menu</span>
-  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256" aria-hidden="true">
-    <path fill="currentColor" d="M222 128a6 6 0 0 1-6 6H40a6 6 0 0 1 0-12h176a6 6 0 0 1 6 6M40 70h176a6 6 0 0 0 0-12H40a6 6 0 0 0 0 12m176 116H40a6 6 0 0 0 0 12h176a6 6 0 0 0 0-12"/>
-  </svg>
-</label>
-<input type="checkbox" id="menu-toggler-checkbox" />
-<nav aria-label="Main Navigation" class="main-nav">
-  <ul>
-    <li><a href="#">Item</a></li>
-    <li class="dropdown" id="dropdown-1" role="combobox">
-      <button type="button" class="dropdown__title" aria-expanded="false" aria-controls="sweets-dropdown"
-  aria-haspopup="true" id="dropdown-toggler-1">
-        I have a submenu
-      </button>
-      <ul class="dropdown__menu" id="sweets-dropdown">
+<body>
+<div class="top">
+  <header>
+    <div class="ui-width">
+      <h1>
+        Navigation accessible avec sous-menus
+      </h1>
+      <p>
+        Vous pouvez utiliser la touche tab pour naviguer.
+      </p>
+    </div>
+  </header>
+  <label title="Toggle menu" role="button" for="menu-toggler-checkbox" tabindex="1" id="menu-toggler-label">
+    <span class="sr-only">Afficher ou masquer le menu</span>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256" aria-hidden="true">
+      <path fill="currentColor" d="M222 128a6 6 0 0 1-6 6H40a6 6 0 0 1 0-12h176a6 6 0 0 1 6 6M40 70h176a6 6 0 0 0 0-12H40a6 6 0 0 0 0 12m176 116H40a6 6 0 0 0 0 12h176a6 6 0 0 0 0-12"/>
+    </svg>
+  </label>
+  <input type="checkbox" id="menu-toggler-checkbox" aria-hidden="true" />
+  <nav aria-label="Main Navigation" class="main-nav">
+    <div class="ui-width">
+      <ul>
         <li><a href="#">Item</a></li>
-        <li><a href="#">Item</a></li>
-        <li><a href="#">Item</a></li>
+        <li class="dropdown" id="dropdown-1" role="combobox">
+          <button type="button" class="dropdown__title" aria-expanded="false" aria-controls="sweets-dropdown"
+      aria-haspopup="true">
+            I have a submenu
+          </button>
+          <ul class="dropdown__menu" id="sweets-dropdown">
+            <li><a href="#">Item</a></li>
+            <li><a href="#">Item</a></li>
+            <li><a href="#">Item</a></li>
+            <li><a href="#">Item</a></li>
+          </ul>
+        </li>
+        <li class="dropdown" id="dropdown-2" role="combobox">
+          <button type="button" class="dropdown__title" aria-expanded="false" aria-controls="sweets-dropdown"
+      aria-haspopup="true">
+            I have a submenu
+          </button>
+          <ul class="dropdown__menu" id="sweets-dropdown">
+            <li><a href="#">Item</a></li>
+            <li><a href="#">Item</a></li>
+            <li><a href="#">Item</a></li>
+            <li><a href="#">Item</a></li>
+          </ul>
+        </li>
         <li><a href="#">Item</a></li>
       </ul>
-    </li>
-    <li class="dropdown" id="dropdown-2" role="combobox">
-      <button type="button" class="dropdown__title" aria-expanded="false" aria-controls="sweets-dropdown"
-  aria-haspopup="true" id="dropdown-toggler-1">
-        I have a submenu
-      </button>
-      <ul class="dropdown__menu" id="sweets-dropdown">
-        <li><a href="#">Item</a></li>
-        <li><a href="#">Item</a></li>
-        <li><a href="#">Item</a></li>
-        <li><a href="#">Item</a></li>
-      </ul>
-    </li>
-    <li><a href="#">Item</a></li>
-  </ul>
-</nav>
-<main>
-  <p>Loin, très loin, au delà des monts Mots, à mille lieues des pays Voyellie et Consonnia, demeurent les Bolos Bolos. Ils vivent en retrait, à Bourg-en-Lettres, sur les côtes de la Sémantique, un vaste océan de langues.</p>
-  <p>Un petit ruisseau, du nom de Larousse, coule en leur lieu et les approvisionne en règlalades nécessaires en tout genre; un pays paradisiagmatique, dans lequel des pans entiers de phrases prémâchées vous volent litéralement tout cuit dans la bouche.</p>
-  <p>Pas même la toute puissante Ponctuation ne régit les Bolos Bolos - une vie on ne peut moins orthodoxographique.</p>
-  <p>Un jour pourtant, une petite ligne de Bolo Bolo du nom de Lorem Ipsum décida de s’aventurer dans la vaste Grammaire.</p>
-  <p>Le grand Oxymore voulut l’en dissuader, le prevenant que là-bas cela fourmillait de vils Virgulos, de sauvages Pointdexclamators et de sournois Semicolons qui l’attendraient pour sûr au prochain paragraphe, mais ces mots ne firent écho dans l’oreille du petit Bolo qui ne se laissa point déconcerter.</p>
-  <p>Il pacqua ses 12 lettrines, glissa son initiale dans sa panse et se mit en route.</p>
-  <p>Alors qu’il avait gravi les premiers flancs de la chaîne des monts Italiques, il jeta un dernier regard sur la skyline de Bourg-en-Lettres, sa ville alphanatale, la headline d’Alphabetville, la subline de sa propre rue, le passage Motus.</p>
-  <p>Le cœur lourd et nostalgique, une question rhétorique lui coula le long de la joue, puis, il se remit en route.</p>
-  <p>En chemin, il rencontra un Copy.</p>
-  <p>Le Copy prévint le petit Bolo que là d’où il venait, il avait déjà maintes et maintes fois été ressaisi, et que tout ce qui désormais restait de leurs origines était le mot et, et que le petit Bolo ferait bien de se raviser, rebrousser chemin et retourner en son sain et sauf bercail.</p>
-  <p>Mais toutes bonnes paroles ne purent le convaincre et il ne s’en point fallut longtemps pour qu’un tas de fourbes Créas aux aguets l’interpelle, le saoule de vers et de vodkale, pour finir par le traîner dans leur agence, où ils le mésusèrent et l’instrumentalisèrent sans fin aux fins de leur projets.</p>
-  <p>Et à moins que cette histoire ne fût réecrite depuis, c’est bien preuve qu’ils l’exploitent encore.</p>
-</main>
+    </div>
+  </nav>
+  <main>
+    <div class="ui-width">
+      <p>Loin, très loin, au delà des monts Mots, à mille lieues des pays Voyellie et Consonnia, demeurent les Bolos Bolos. Ils vivent en retrait, à Bourg-en-Lettres, sur les côtes de la Sémantique, un vaste océan de langues.</p>
+      <p>Un petit ruisseau, du nom de Larousse, coule en leur lieu et les approvisionne en règlalades nécessaires en tout genre; un pays paradisiagmatique, dans lequel des pans entiers de phrases prémâchées vous volent litéralement tout cuit dans la bouche.</p>
+      <p>Pas même la toute puissante Ponctuation ne régit les Bolos Bolos - une vie on ne peut moins orthodoxographique.</p>
+      <p>Un jour pourtant, une petite ligne de Bolo Bolo du nom de Lorem Ipsum décida de s’aventurer dans la vaste Grammaire.</p>
+      <p>Le grand Oxymore voulut l’en dissuader, le prevenant que là-bas cela fourmillait de vils Virgulos, de sauvages Pointdexclamators et de sournois Semicolons qui l’attendraient pour sûr au prochain paragraphe, mais ces mots ne firent écho dans l’oreille du petit Bolo qui ne se laissa point déconcerter.</p>
+      <p>Il pacqua ses 12 lettrines, glissa son initiale dans sa panse et se mit en route.</p>
+      <p>Alors qu’il avait gravi les premiers flancs de la chaîne des monts Italiques, il jeta un dernier regard sur la skyline de Bourg-en-Lettres, sa ville alphanatale, la headline d’Alphabetville, la subline de sa propre rue, le passage Motus.</p>
+      <p>Le cœur lourd et nostalgique, une question rhétorique lui coula le long de la joue, puis, il se remit en route.</p>
+    </div>
+  </main>
+</div>
 <footer>
-  <p>Original (c) <a href="https://moderncss.dev/css-only-accessible-dropdown-navigation-menu/" target="_blank" rel="noopener">Stephanie Eckles</a></p>
+  <div class="ui-width">
+    <p>Original (c) <a href="https://moderncss.dev/css-only-accessible-dropdown-navigation-menu/" target="_blank" rel="noopener">Stephanie Eckles</a></p>
+  </div>
 </footer>
 <script src="script.js"></script>
 </body>
