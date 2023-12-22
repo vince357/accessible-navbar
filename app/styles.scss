@@ -236,4 +236,14 @@ footer {
   text-align: center;
   padding: 1rem;
   background-color: #f0f0f0;
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    > div {
+      display: flex;
+      gap: 1rem
+    }
+  }
 }
