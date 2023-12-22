@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <title>Navigation accessible (POC)</title>
-<meta name="viewport" content="width=device-width" />
-<link rel="stylesheet" type="text/css" href="styles.css" />
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 <div class="top">
@@ -26,17 +26,17 @@
       <path fill="currentColor" d="M222 128a6 6 0 0 1-6 6H40a6 6 0 0 1 0-12h176a6 6 0 0 1 6 6M40 70h176a6 6 0 0 0 0-12H40a6 6 0 0 0 0 12m176 116H40a6 6 0 0 0 0 12h176a6 6 0 0 0 0-12"/>
     </svg>
   </label>
-  <input type="checkbox" id="menu-toggler-checkbox" name="menu-toggler-checkbox" aria-hidden="true" aria-labelledby="menu-toggler-label" />
+  <input type="checkbox" id="menu-toggler-checkbox" name="menu-toggler-checkbox" aria-hidden="true" aria-labelledby="menu-toggler-label">
   <nav aria-label="Main Navigation" class="main-nav" id="main-nav">
     <div class="ui-width">
       <ul>
         <li><a href="#">Item</a></li>
         <li class="dropdown">
-          <button type="button" class="dropdown__title" aria-expanded="false" aria-controls="sweets-dropdown"
+          <button type="button" class="dropdown__title" aria-expanded="false" aria-controls="dropdown1"
       aria-haspopup="true">
             Item avec sous-menu
           </button>
-          <ul class="dropdown__menu">
+          <ul class="dropdown__menu" id="dropdown1">
             <li><a href="#">Item</a></li>
             <li><a href="#">Item</a></li>
             <li><a href="#">Item</a></li>
@@ -44,11 +44,11 @@
           </ul>
         </li>
         <li class="dropdown">
-          <button type="button" class="dropdown__title" aria-expanded="false" aria-controls="sweets-dropdown"
+          <button type="button" class="dropdown__title" aria-expanded="false" aria-controls="dropdown2"
       aria-haspopup="true">
         Item avec sous-menu
           </button>
-          <ul class="dropdown__menu">
+          <ul class="dropdown__menu" id="dropdown2">
             <li><a href="#">Item</a></li>
             <li><a href="#">Item</a></li>
             <li><a href="#">Item</a></li>
