@@ -1,0 +1,209 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+          clip-path: inset(50%) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+#menu-toggler-checkbox {
+  display: none;
+}
+
+label[for=menu-toggler-checkbox] {
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+  right: 0.5em;
+  top: 0.5em;
+  color: #fff;
+  background-color: rgb(60, 88, 157);
+  padding: 0.5em;
+  display: grid;
+  place-content: center;
+  border-radius: 0.5em;
+}
+
+@media (min-width: 60rem) {
+  label[for=menu-toggler-checkbox] {
+    display: none;
+  }
+}
+.dropdown__title {
+  background-color: transparent;
+  border: none;
+  font-family: inherit;
+}
+
+nav {
+  background-color: rgb(60, 88, 157);
+  padding: 0 1rem;
+  position: sticky;
+  top: 0;
+  display: none;
+  place-items: center;
+}
+nav > ul {
+  grid-auto-flow: column;
+}
+nav > ul > li {
+  margin: 0 0.5rem;
+}
+nav > ul > li a,
+nav > ul > li .dropdown__title {
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  color: #fff;
+  font-size: 1.125rem;
+}
+nav > ul > li > a,
+nav > ul > li .dropdown__title {
+  padding: 1rem 0.5rem;
+  border-top: 3px solid transparent;
+  transition: 280ms all 120ms ease-out;
+}
+nav > ul > li > a:hover, nav > ul > li > a:focus,
+nav > ul > li .dropdown__title:hover,
+nav > ul > li .dropdown__title:focus {
+  border-top-color: #e4e8f4;
+  color: #e4e8f4;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+}
+nav ul li {
+  padding: 0;
+}
+
+#menu-toggler-checkbox:checked + nav {
+  display: grid;
+}
+
+@media (min-width: 60rem) {
+  nav {
+    display: grid;
+  }
+}
+.dropdown {
+  position: relative;
+}
+.dropdown .dropdown__title {
+  display: inline-flex;
+  align-items: center;
+}
+.dropdown .dropdown__title:after {
+  content: "";
+  border: 0.35rem solid transparent;
+  border-top-color: rgba(255, 255, 255, 0.5);
+  margin-left: 0.25em;
+  transform: translateY(0.15em);
+}
+.dropdown .dropdown__menu {
+  position: absolute;
+  min-width: 15ch;
+  left: 50%;
+  top: calc(100% - 0.25rem);
+  transition: 280ms all 120ms ease-out;
+  transform: rotateX(-90deg) translateX(-50%);
+  transform-origin: top center;
+  visibility: hidden;
+  opacity: 0.3;
+  padding: 0.5em 0;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.15em 0.25em rgba(0, 0, 0, 0.2);
+}
+.dropdown .dropdown__menu a {
+  color: #2a3e6e;
+  display: block;
+  padding: 0.5em;
+  opacity: 0;
+  transition: 280ms all 120ms ease-out;
+}
+.dropdown .dropdown__menu a:hover {
+  background-color: rgba(60, 88, 157, 0.2);
+}
+.dropdown .dropdown__menu a:focus {
+  background-color: rgba(60, 88, 157, 0.2);
+}
+.dropdown:after {
+  content: "";
+  border: 0.5rem solid transparent;
+  border-bottom-color: #fff;
+  position: absolute;
+  top: calc(100% - 1.25rem);
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 280ms all 120ms ease-out;
+  opacity: 0;
+  will-change: opacity;
+}
+.dropdown:hover .dropdown__title, .dropdown:focus-within .dropdown__title {
+  border-top-color: #e4e8f4;
+}
+.dropdown:hover .dropdown__menu, .dropdown:focus-within .dropdown__menu {
+  opacity: 1;
+  transform: rotateX(0) translateX(-50%);
+  visibility: visible;
+}
+.dropdown:hover .dropdown__menu a, .dropdown:focus-within .dropdown__menu a {
+  opacity: 1;
+}
+.dropdown:hover:after, .dropdown:focus-within:after {
+  opacity: 1;
+}
+.dropdown:focus-within .dropdown__title {
+  outline-offset: 1px;
+  outline-color: #fff;
+  outline-style: solid;
+  outline-width: 1px;
+  border-radius: 0.25rem;
+  outline: -webkit-focus-ring-color auto 1px;
+}
+
+body {
+  font-family: sans-serif;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+header {
+  background-color: rgba(60, 88, 157, 0.9);
+  color: #fff;
+  text-align: center;
+  padding: 3rem;
+}
+
+main {
+  padding: 1rem;
+  max-width: 80ch;
+  margin: 0 auto;
+}
+main:focus {
+  outline: none;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #f0f0f0;
+}/*# sourceMappingURL=styles.css.map */

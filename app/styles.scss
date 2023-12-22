@@ -1,0 +1,210 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+$color: rgb(60, 88, 157);
+$color-dark: scale-color($color, $lightness: -30%);
+$transition: 280ms all 120ms ease-out;
+* {
+  box-sizing: border-box;
+}
+// .dropdown:focus,
+// .dropdown:focus-within {
+//   background: red;
+// }
+.sr-only {
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important;
+	clip-path: inset(50%) !important;
+	height: 1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;
+}
+#menu-toggler-checkbox {
+  display: none;
+}
+label[for="menu-toggler-checkbox"] {
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+  right: .5em;
+  top: .5em;
+  color: #fff;
+  background-color: $color;
+  padding: .5em;
+  display: grid;
+  place-content: center;
+  border-radius: .5em;
+}
+@media (min-width: 60rem) {
+  label[for="menu-toggler-checkbox"] {
+    display: none;
+  }
+}
+.dropdown__title {
+  background-color: transparent;
+  border: none;
+  font-family: inherit;
+}
+nav {
+  background-color: $color;
+  padding: 0 1rem;
+  position: sticky;
+  top: 0;
+  display: none;
+  place-items: center;
+  > ul {
+    grid-auto-flow: column;
+    > li {
+      margin: 0 0.5rem;
+      a,
+      .dropdown__title {
+        text-decoration: none;
+        text-align: center;
+        display: inline-block;
+        color: #fff;
+        font-size: 1.125rem;
+      }
+      > a,
+      .dropdown__title {
+        padding: 1rem 0.5rem;
+        border-top: 3px solid transparent;
+        transition: $transition;
+        &:hover,
+        &:focus {
+          border-top-color: lighten($color, 50%);
+          color: lighten($color, 50%);
+        }
+      }
+    }
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+
+    li {
+      padding: 0;
+    }
+  }
+}
+#menu-toggler-checkbox:checked + nav {
+  display: grid;
+}
+@media (min-width: 60rem) {
+  nav {
+    display: grid;
+  }
+}
+.dropdown {
+  position: relative;
+  .dropdown__title {
+    display: inline-flex;
+    align-items: center;
+
+    &:after {
+      content: "";
+      border: .35rem solid transparent;
+      border-top-color: rgba(#fff, 0.5);
+      margin-left: .25em;
+      transform: translateY(.15em);
+    }
+  }
+  .dropdown__menu {
+    position: absolute;
+    min-width: 15ch;
+    left: 50%;
+    top: calc(100% - 0.25rem);
+    transition: $transition;
+    transform: rotateX(-90deg) translateX(-50%);
+    transform-origin: top center;
+    visibility: hidden;
+    opacity: .3;
+    padding: .5em 0;
+    background-color: #fff;
+    border-radius: .25rem;
+    box-shadow: 0 0.15em 0.25em rgba(black, 0.2);
+    a {
+      color: $color-dark;
+      display: block;
+      padding: .5em;
+      opacity: 0;
+      transition: $transition;
+      &:hover {
+        background-color: rgba($color, 0.2);
+      }
+      &:focus {
+        // outline: none;
+        background-color: rgba($color, 0.2);
+      }
+    }
+  }
+  &:after {
+    content: "";
+    border: .5rem solid transparent;
+    border-bottom-color: #fff;
+    position: absolute;
+    top: calc(100% - 1.25rem);
+    left: 50%;
+    transform: translateX(-50%);
+    transition: $transition;
+    opacity: 0;
+    will-change: opacity;
+  }
+  &:hover,
+  &:focus-within {
+    .dropdown__title {
+      border-top-color: lighten($color, 50%);
+    }
+    .dropdown__menu {
+      opacity: 1;
+      transform: rotateX(0) translateX(-50%);
+      visibility: visible;
+      a {
+        opacity: 1;
+      }
+    }
+    &:after {
+      opacity: 1;
+    }
+  }
+  &:focus-within {
+    .dropdown__title {
+      outline-offset: 1px;
+      outline-color: #fff;
+      outline-style: solid;
+      outline-width: 1px;
+      border-radius: .25rem;
+      outline: -webkit-focus-ring-color auto 1px;
+    }
+  }
+}
+body {
+  font-family: sans-serif;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+header {  
+  background-color: rgba($color, 0.9);
+  color: #fff;
+  text-align: center;
+  padding: 3rem;
+}
+main {
+  padding: 1rem;
+  max-width: 80ch;
+  margin: 0 auto;
+  &:focus {
+    outline: none;
+  }
+}
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #f0f0f0;
+}

@@ -1,0 +1,14 @@
+{
+  "name": "accessible-nav-bar",
+  "version": "1.0.0",
+  "main": "app/index.html",
+  "repository": "git@github.com:vince357/accessible-navbar.git",
+  "author": "V de La Fonchais <vdelafonchais@itnetwork.fr>",
+  "dependencies": {
+  },
+  "scripts": {
+    "deploy": "surge ./app accessible-navbar.surge.sh"
+  },
+  "devDependencies": {
+  }
+}
